@@ -1,0 +1,137 @@
+.container-fluid {
+  padding: 0;
+}
+
+/* home */
+.home-div {
+  padding: 0;
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+
+.home-div h1 {
+  font-weight: bold;
+  margin-bottom: 0.6em;
+}
+
+/* info compromisso */
+
+.info-compromisso {
+  padding: 0;
+}
+
+.info-compromisso p {
+  margin: 0;
+  padding-left: 0.7em;
+}
+
+.info-compromisso li {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* barra */
+
+.bar-div {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1.2em;
+}
+
+.bar-div h1 {
+  margin: 0;
+}
+
+.buttons-div {
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* adicionar */
+
+#add-button.btn-success {
+  float: right;
+}
+
+/* home formulario */
+
+.home-form {
+  display: flex;
+  align-items: center;
+}
+
+/* lista de compromissos */
+.list {
+  padding-left: 0;
+}
+
+.list-item {
+  list-style: none;
+  font-size: 1.5em;
+  height: 3em;
+  padding: 0.7em 0.7em 0 0.7em;
+  border-bottom: 1px solid black;
+}
+
+.list-item a{
+  text-decoration: none;
+  color: black;
+}
+
+.list-item a:hover {
+  color:  #221e1e;
+}
+
+/* icones */
+
+.far.fa-clock, .fas.fa-check, .fas.fa-times {
+  margin: 5px;
+  font-size: 1em;
+  float: right;
+}
+
+.far.fa-clock {
+  color: blue;
+}
+
+.fas.fa-check {
+  color: green;
+}
+
+.fas.fa-times {
+  color: red;
+}
+
+/* message */
+
+.messages {
+  padding: 0;
+}
+
+.messages li {
+  list-style-type: none;
+}
+
+/* filtro */
+
+.filter-div {
+  padding: 0;
+  margin: 1em 0 1em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#filter {
+  display: inline-block;
+  width: 43%;
+  margin-left: 0.7em;
+  margin-right: 0.7em;
+
+}

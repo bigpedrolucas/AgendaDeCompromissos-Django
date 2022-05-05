@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+{% load crispy_forms_tags %}
+
+{% block title %}Editar compromisso{% endblock %} 
+
+{% block content %}
+    <div class="offset-1 col-10 home-div">
+    <h1>Editar compromisso</h1>
+    {% if messages %}
+    <ul class="messages">
+      {% for message in messages %} 
+        <li {% if message.tags %}class="alert alert-danger"{% endif %}>{{message}}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %} {{form | crispy}}
+        <input type="submit" class="btn btn-success" value="Salvar" />
+    </form>
+    </div>
+{% endblock %}

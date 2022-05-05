@@ -1,0 +1,3 @@
+Se necessitar de login na área de /admin
+usuario: superuser
+senha: superuser

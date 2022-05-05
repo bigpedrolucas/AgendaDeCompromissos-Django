@@ -1,0 +1,39 @@
+{% extends 'base.html' %} 
+
+{% block title %}{{compromisso.titulo}}{% endblock %}
+
+{% block content %}
+  <div class="offset-1 col-10 home-div">
+    <div class="col-12 bar-div">
+      <h1>{{compromisso.titulo}}</h1>
+      <div class="col-2 buttons-div">
+        <a href="/editar/{{compromisso.id}}">
+          <button type="button" class="btn btn-primary">Editar</button>
+        </a>
+        <a href="/excluir/{{compromisso.id}}">
+          <button type="button" class="btn btn-danger">Excluir</button>
+        </a>
+      </div>
+    </div>
+    <ul class="info-compromisso">
+      <li>
+        <i class="fas fa-calendar-alt"></i>
+        <p>{{compromisso.data | date:'d F Y'}}</p>
+      </li>
+      <li>
+        <i class="fas fa-clock"></i>
+        <p>{{compromisso.hora_Inicio | date:'H:i'}} - {{compromisso.hora_Fim | date:'H:i'}}</p>
+      </li>
+      <li>
+        <i class="fas fa-map-marked-alt"></i>
+        <p>{{compromisso.local}}</p>
+      </li>
+      <li>
+        <i class="fas fa-info-circle"></i>
+        <p>{{compromisso.status | title}}
+      </li>
+    </ul>
+
+    <p>{{compromisso.observacoes}}</p>
+  </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html' %} 
+
+{% block title %}Agenda de Compromissos{% endblock %}
+
+{% block content %}
+  <div class="offset-1 col-10 home-div">
+    <h1>Agenda de compromissos por Pedro Lucas</h1>
+    
+    <div class="col-12 filter-div">
+      <form action="" method="get" class="home-form">
+        <span>Filtrar por status:</span>
+        <select name="filter" id="filter" class="form-control">
+          <option value="">Escolha uma opção</option>
+          <option value="agendado">Agendado</option>
+          <option value="realizado">Realizado</option>
+          <option value="cancelado">Cancelado</option>
+        </select>
+        <input type="submit" value="Buscar" class="btn btn-primary">
+      </form>
+      <a id="add-button" href="novocompromisso/">
+        <button type="button" class="btn btn-success">Novo compromisso</button>
+      </a>
+  
+      
+    </div>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %} 
+          <li {% if message.tags %}class="alert alert-{{message.tags}}"{% endif %}>{{message}}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <ul class="list">
+      {% for compromisso in listaCompromissos %}
+      <li class="list-item">
+        <span>
+          <a href="/compromisso/{{compromisso.id}}">
+            {{compromisso.data|date:"d/m/Y"}} - {{compromisso.titulo}}
+          </a>
+        </span>
+        {% if compromisso.status == 'agendado' %}
+          <span><i class="far fa-clock"></i></span>
+        {% endif %}
+        {% if compromisso.status == 'realizado' %}
+          <span><i class="fas fa-check"></i></span>
+        {% endif %}
+        {% if compromisso.status == 'cancelado' %}
+          <span><i class="fas fa-times"></i></span>
+        {% endif %}
+        
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}
